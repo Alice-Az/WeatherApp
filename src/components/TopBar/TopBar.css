@@ -7,8 +7,9 @@
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    border-bottom: 5px solid #e8e8e8;
+    border-bottom: 2px solid #e8e8e8;
     background-color: aliceblue;
+    box-shadow: 0px 5px 7px #e8e8e8;
 }
 
 @media screen and (max-width:600px) {
