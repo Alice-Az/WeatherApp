@@ -1,0 +1,54 @@
+.weather-overview {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin: 5vw 25vw;
+    height: 30vh;
+    width: 50vw;
+}
+
+.weather-data {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    border: 1px solid black;
+    height: 100%;
+}
+
+.location {
+    border: 1px solid black;
+    font-size: 2.7rem;
+    margin:0;
+    padding: 0;
+    text-align: left;
+}
+
+.temperature {
+    border: 1px solid black;
+    font-size: 5rem;
+    margin:0;
+    padding: 0;
+    text-align: left;
+}
+
+.weather-icon {
+    border: 1px solid black;
+    height: 100%;
+}
+
+.weather-image {
+    height: 70%;
+}
+
+@media screen and (max-width:1200px) {
+    .weather-overview {
+        width: 70vw;
+        margin: 5vw 15vw;
+        height: 20vh;
+    }
+}
