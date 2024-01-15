@@ -1,0 +1,12 @@
+.hourly-table {
+    width: 100%;
+}
+
+.hourly-header {
+    width: 20%;
+    text-align: left;
+}
+
+.hourly-data {
+    text-align: left;
+}

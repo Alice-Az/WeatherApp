@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import TopBar from './components/TopBar/TopBar';
 import WeatherOverview from './components/WeatherContainers/WeatherOverview/WeatherOverview';
+import WeatherDetails from './components/WeatherContainers/WeatherDetails/WeatherDetails';
 
 function App() {
 
@@ -14,6 +15,7 @@ function App() {
     <>
       <TopBar/>
       <WeatherOverview location={location} temperature={temperature}/>
+      <WeatherDetails/>
     </>
   )
 }
