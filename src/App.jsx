@@ -8,12 +8,14 @@ import WeatherDetails from './components/WeatherContainers/WeatherDetails/Weathe
 
 function App() {
 
-  const location = 'San Francisco, CA';
+  const testlocation = 'San Francisco, CA';
   const temperature = '15 °C';
+
+  const [location, setLocation] = useState('Stockholm');
 
   return (
     <>
-      <TopBar/>
+      <TopBar onClick={setLocation}/>
       <WeatherOverview location={location} temperature={temperature}/>
       <WeatherDetails/>
     </>
