@@ -7,8 +7,10 @@
     border: 1px solid black;
     border-radius: 10px;
     margin: 5vw 25vw;
+    min-height: 200px;
     height: 30vh;
     width: 50vw;
+    
 }
 
 .weather-data {
@@ -16,12 +18,10 @@
     flex-direction: column;
     justify-content: center;
     align-items: left;
-    border: 1px solid black;
     height: 100%;
 }
 
 .location {
-    border: 1px solid black;
     font-size: 2.7rem;
     margin:0;
     padding: 0;
@@ -29,7 +29,6 @@
 }
 
 .temperature {
-    border: 1px solid black;
     font-size: 5rem;
     margin:0;
     padding: 0;
@@ -47,8 +46,49 @@
 
 @media screen and (max-width:1200px) {
     .weather-overview {
-        width: 70vw;
-        margin: 5vw 15vw;
+        width: 70%;
+        margin: 5% 15%;
         height: 20vh;
     }
 }
+
+@media screen and (max-width: 900px) {
+    .location {
+        font-size: 2rem;
+    }
+
+    .temperature {
+        font-size: 2.5rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .weather-overview {
+        width: 80%;
+    }
+
+    .weather-image {
+        height: 50%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .location {
+        font-size: 1.5rem;
+    }
+
+    .temperature {
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .weather-overview {
+        width: 90%;
+    }
+
+    .weather-image {
+        height: 40%;
+    }
+}
+

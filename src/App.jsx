@@ -7,10 +7,13 @@ import WeatherOverview from './components/WeatherContainers/WeatherOverview/Weat
 
 function App() {
 
+  const location = 'San Francisco, CA';
+  const temperature = '15 °C';
+
   return (
     <>
       <TopBar/>
-      <WeatherOverview/>
+      <WeatherOverview location={location} temperature={temperature}/>
     </>
   )
 }
