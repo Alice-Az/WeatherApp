@@ -1,0 +1,12 @@
+.details-table {
+    width: 100%;
+}
+
+.details-header {
+    width: 20%;
+    text-align: left;
+}
+
+.details-data {
+    text-align: left;
+}

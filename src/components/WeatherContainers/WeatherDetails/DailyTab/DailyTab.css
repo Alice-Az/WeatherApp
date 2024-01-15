@@ -1,0 +1,12 @@
+.daily-table {
+    width: 100%;
+}
+
+.daily-header {
+    width: 20%;
+    text-align: left;
+}
+
+.daily-data {
+    text-align: left;
+}

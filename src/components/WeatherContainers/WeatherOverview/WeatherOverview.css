@@ -1,0 +1,97 @@
+.weather-overview {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    margin: 3% 20%;
+    padding: 15px;
+    min-height: 200px;
+    height: 30vh;
+    width: 50vw;
+    background-color: #7ba2e0;
+    filter: drop-shadow(0 0 0.5rem white);
+}
+
+.weather-data {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    height: 100%;
+    margin-right: 10px;
+}
+
+.location {
+    font-size: 2.7rem;
+    color: aliceblue;
+    margin:0;
+    padding: 0;
+    text-align: left;
+}
+
+.temperature {
+    font-size: 5rem;
+    color: aliceblue;
+    margin:0;
+    padding: 0;
+    text-align: left;
+}
+
+.weather-icon {
+    border: 1px solid black;
+    height: 100%;
+    margin-left: 10px;
+}
+
+.weather-image {
+    height: 70%;
+    color:aliceblue;
+}
+
+@media screen and (max-width:1200px) {
+    .weather-overview {
+        width: 70%;
+        margin: 3% 15%;
+        height: 20vh;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .location {
+        font-size: 2rem;
+    }
+
+    .temperature {
+        font-size: 2.5rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .weather-overview {
+        width: 80%;
+    }
+
+    .weather-image {
+        height: 50%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .location {
+        font-size: 1.5rem;
+    }
+
+    .temperature {
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .weather-image {
+        height: 40%;
+    }
+}
+

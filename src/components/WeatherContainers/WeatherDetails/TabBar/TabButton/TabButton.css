@@ -1,0 +1,30 @@
+.tab-button {
+    flex-basis: 100px;
+    flex-grow:1;
+    font-size: 1.3rem;
+    padding: 1% 1%;
+    border: none;
+    background-color: inherit;
+    border-bottom: 2px solid #c1d6f7;
+    color:aliceblue;
+}
+
+.tab-button:first-child {
+    background-color: inherit;
+    border-top-left-radius: 10px;
+}
+
+.tab-button:hover {
+    cursor: pointer;
+}
+
+.tab-button:last-child {
+    background-color: inherit;
+    border-top-right-radius: 10px;
+}
+
+@media screen and (max-width: 500px) {
+    .tab-button {
+        font-size: 0.9rem;
+    }
+}

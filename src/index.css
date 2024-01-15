@@ -1,5 +1,6 @@
 * {
   box-sizing: border-box;
+  /* border: 2px solid red; */
 }
 
 :root {
@@ -28,8 +29,8 @@ a:hover {
 
 body {
   margin: 0;
-  /* display: flex;
-  place-items: center; */
+  display: flex;
+  align-items: center;
   min-width: 320px;
   min-height: 100vh;
 }
@@ -37,6 +38,10 @@ body {
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+}
+
+p {
+  font-family: 'Roboto', sans-serif;
 }
 
 /* button {
