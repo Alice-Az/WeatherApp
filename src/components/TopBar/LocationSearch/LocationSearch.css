@@ -28,12 +28,12 @@
     border-radius: 10px;
     padding: 0px 20px;
     font-size: 20px;
-    color: #496982;
+    color: #2e476e;
 }
 
 .search-icon:hover {
     cursor: pointer;
-    background-color: #cbe3f5;
+    background-color: #cfdef8;
 }
 
 @media screen and (max-width: 600px) {

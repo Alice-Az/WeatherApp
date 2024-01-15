@@ -8,13 +8,14 @@
 
 .feather-image {
     height: 100%;
-    color: #496982;
+    /* color: #496982; */
+    color: #2e476e;
 }
 
 .app-name {
     font-family: 'Pacifico', cursive;
     font-size:1.5rem;
-    color: #496982;
+    color: #2e476e;
 }
 
 @media screen and (max-width: 600px) {

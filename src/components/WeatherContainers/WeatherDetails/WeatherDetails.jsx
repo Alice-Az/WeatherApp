@@ -11,10 +11,10 @@ const WeatherDetails = () => {
 
     return (
         <div className='weather-details'>
-            <TabBar className='tab-bar' onClick={setView}/>
-            {view==='details' && <DetailsTab className='details-tab'/>}
-            {view==='daily' && <DailyTab className='daily-tab'/>}
-            {view==='hourly' && <HourlyTab className='hourly-tab'/>}
+            <TabBar view={view} onClick={setView}/>
+            {view==='details' && <DetailsTab/>}
+            {view==='daily' && <DailyTab/>}
+            {view==='hourly' && <HourlyTab/>} 
         </div>
     );
 };

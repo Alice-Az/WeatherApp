@@ -13,6 +13,7 @@
     width: 50vw;
     background-color: #7ba2e0;
     filter: drop-shadow(0 0 0.5rem white);
+    text-shadow: 2px 2px 2px #3964a8;
 }
 
 .weather-data {
@@ -26,6 +27,7 @@
 
 .location {
     font-size: 2.7rem;
+    font-weight: 700;
     color: aliceblue;
     margin:0;
     padding: 0;

@@ -4,13 +4,12 @@
     font-size: 1.3rem;
     padding: 1% 1%;
     border: none;
-    background-color: inherit;
-    border-bottom: 2px solid #c1d6f7;
+    background-color: #5d89cf;
     color:aliceblue;
+    text-shadow: 2px 2px 2px #3964a8;
 }
 
 .tab-button:first-child {
-    background-color: inherit;
     border-top-left-radius: 10px;
 }
 
@@ -19,8 +18,15 @@
 }
 
 .tab-button:last-child {
-    background-color: inherit;
     border-top-right-radius: 10px;
+}
+
+.selected-tab {
+    background-color:inherit;
+}
+
+.tab-button:not(.selected-tab):hover {
+    background-color: #4974ba;
 }
 
 @media screen and (max-width: 500px) {
@@ -28,3 +34,6 @@
         font-size: 0.9rem;
     }
 }
+
+
+

@@ -7,7 +7,7 @@ const AppIcon = () => {
         <>
         <div className='app-icon'>
             <FontAwesomeIcon icon={faFeatherPointed} className='feather-image'/>      
-            <p className='app-name'>MyRandomWeather</p>
+            <p className='app-name'>RandomWeather</p>
         </div>
         </>
         
