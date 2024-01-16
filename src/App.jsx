@@ -5,6 +5,7 @@ import './App.css'
 import TopBar from './components/TopBar/TopBar';
 import WeatherOverview from './components/WeatherContainers/WeatherOverview/WeatherOverview';
 import WeatherDetails from './components/WeatherContainers/WeatherDetails/WeatherDetails';
+import { GetWeather, GetLocations } from './services/WeatherAPI';
 
 function App() {
 
@@ -14,6 +15,7 @@ function App() {
 
   return (
     <>
+      {/* <TopBar onClick={setLocation}/> */}
       <TopBar onClick={setLocation}/>
       <WeatherOverview location={location} temperature={temperature}/>
       <WeatherDetails/>
