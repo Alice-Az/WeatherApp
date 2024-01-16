@@ -8,7 +8,6 @@ import WeatherDetails from './components/WeatherContainers/WeatherDetails/Weathe
 
 function App() {
 
-  const testlocation = 'San Francisco, CA';
   const temperature = '15 °C';
 
   const [location, setLocation] = useState('Stockholm');

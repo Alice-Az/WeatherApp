@@ -10,6 +10,7 @@
   width: 100%;
   background-image:url(assets/sky-1401882.jpg);
   background-size: cover;
+  font-family: 'Roboto', sans-serif;
 }
 
 .logo {

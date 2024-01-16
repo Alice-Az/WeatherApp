@@ -3,10 +3,17 @@
 }
 
 .daily-header {
-    width: 20%;
+    width: 30%;
+    padding: 1% 2%;
     text-align: left;
 }
 
 .daily-data {
     text-align: left;
+    padding: 1% 2%;
+}
+
+tr {
+    margin: 0 5px;
+    border-bottom: 2px solid black;
 }
