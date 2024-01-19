@@ -3,7 +3,8 @@ import weatherCurrent from './testWeather.json';
 
 export const GetLocations = async (input) => {
 
-    let url = "http://dataservice.accuweather.com/locations/v1/cities/search?apikey=Ix64mBi5uAs2vwkVj5cXyWSFL0eKO3cz&q=" + input;
+    // let url = "http://dataservice.accuweather.com/locations/v1/cities/search?apikey=Ix64mBi5uAs2vwkVj5cXyWSFL0eKO3cz&q=" + input;
+    let url = "http://localhost:5018/api/Location/location";
 
     return await fetch(url)
     .then(response => response.json())
@@ -33,41 +34,97 @@ export const GetLocations = async (input) => {
 
         return locations;
         }
-        // for (let i=0; i < locationList.length; i++) {
-
-        //     let location = {
-        //         Key: locationList[i].Key,
-        //         Rank: locationList[i].Rank,
-        //         LocalizedName: locationList[i].LocalizedName,
-        //         EnglishName: locationList[i].EnglishName,
-        //         Region: locationList[i].Region.EnglishName,
-        //         Country: locationList[i].Country.EnglishName
-        //     };
-    
-        //     locations.push(location);
-    
-        //     if (locations.length === 5) break;
-        // };
     );
 
 };
 
-export const GetWeather = () => {
+export const GetWeather = async (locationKey) => {
 
-    let currentWeather = {
-        WeatherText: weatherCurrent[0].WeatherText,
-        WeatherIcon: weatherCurrent[0].WeatherIcon,
-        Temperature: `${weatherCurrent[0].Temperature.Metric.Value} °${weatherCurrent[0].Temperature.Metric.Unit}`,
-        RealFeelTemperature: `${weatherCurrent[0].RealFeelTemperature.Metric.Value} °${weatherCurrent[0].RealFeelTemperature.Metric.Unit}`,
-        RelativeHumidity: weatherCurrent[0].RelativeHumidity,
-        DewPoint: weatherCurrent[0].DewPoint.Metric.Value,
-        Wind: `${weatherCurrent[0].Wind.Direction.Degrees} ${weatherCurrent[0].Wind.Direction.Localized}, ${weatherCurrent[0].Wind.Speed.Metric.Value} ${weatherCurrent[0].Wind.Speed.Metric.Unit}`,
-        UVIndex: `${weatherCurrent[0].UVIndex} (${weatherCurrent[0].UVIndexText})`,
-        Precipitation: `${weatherCurrent[0].PrecipitationSummary.Precipitation.Metric.Value} ${weatherCurrent[0].PrecipitationSummary.Precipitation.Metric.Unit}`,
-        Visibility: `${weatherCurrent[0].Visibility.Metric.Value} ${weatherCurrent[0].Visibility.Metric.Unit}`,
-        Pressure: `${weatherCurrent[0].Pressure.Metric.Value} ${weatherCurrent[0].Pressure.Metric.Unit}`
-    };
+    // let url = `http://dataservice.accuweather.com/currentconditions/v1/${locationKey}?apikey=Ix64mBi5uAs2vwkVj5cXyWSFL0eKO3cz&details=true`;
+    let url = 'http://localhost:5018/api/Weather/weather';
 
-    return currentWeather;
+    return await fetch(url)
+    .then(response => response.json())
+    .then(data => {
+
+        let currentWeather = {
+            WeatherText: data[0].WeatherText,
+            WeatherIcon: data[0].WeatherIcon,
+            Temperature: `${data[0].Temperature.Metric.Value} °${data[0].Temperature.Metric.Unit}`,
+            RealFeelTemperature: `${data[0].RealFeelTemperature.Metric.Value} °${data[0].RealFeelTemperature.Metric.Unit}`,
+            RelativeHumidity: `${data[0].RelativeHumidity} %`,
+            DewPoint: data[0].DewPoint.Metric.Value,
+            Wind: `${data[0].Wind.Direction.Degrees} ${data[0].Wind.Direction.Localized}, ${data[0].Wind.Speed.Metric.Value} ${data[0].Wind.Speed.Metric.Unit}`,
+            UVIndex: `${data[0].UVIndex} (${data[0].UVIndexText})`,
+            Precipitation: `${data[0].PrecipitationSummary.Precipitation.Metric.Value} ${data[0].PrecipitationSummary.Precipitation.Metric.Unit}`,
+            Visibility: `${data[0].Visibility.Metric.Value} ${data[0].Visibility.Metric.Unit}`,
+            Pressure: `${data[0].Pressure.Metric.Value} ${data[0].Pressure.Metric.Unit}`
+        };
+
+        return currentWeather;
+        });
+};
+
+export const GetForecastHourly = async (locationKey) => {
+
+    // let url = `http://dataservice.accuweather.com/forecasts/v1/hourly/12hour/${locationKey}?apikey=Ix64mBi5uAs2vwkVj5cXyWSFL0eKO3cz&metric=true`;
+    let url = "http://localhost:5018/api/Weather/forecastHourly";
+
+    return await fetch(url)
+    .then(response => response.json())
+    .then(data => {
+
+        let forecastsHours = [];
+
+        for (let i= 0; i < data.length; i++) {
+
+            let newDT = `${data[i].DateTime.substring(0,10)} - ${data[i].DateTime.substring(11,16)}`;
+
+            let forecastHourly = {
+                DateTime: newDT,
+                WeatherIcon: data[i].WeatherIcon,
+                WeatherText: data[i].IconPhrase,
+                Temperature: `${data[i].Temperature.Value} °${data[i].Temperature.Unit}`
+            };
+
+            forecastsHours.push(forecastHourly);
+
+        };
+
+        return forecastsHours;
+    });
+};
+
+export const GetForecastDaily = async (locationKey) => {
+
+    // let url = `http://dataservice.accuweather.com/forecasts/v1/daily/5day/${locationKey}?apikey=Ix64mBi5uAs2vwkVj5cXyWSFL0eKO3cz&metric=true`;
+    let url = "http://localhost:5018/api/Weather/forecastDaily";
+
+    return await fetch(url)
+    .then(response => response.json())
+    .then(data => {
+
+        let newData = data.DailyForecasts;
+        let forecastsDays = [];
+
+        for (let i= 0; i < newData.length; i++) {
+
+            let forecastDaily = {
+                Date: newData[i].Date.substring(0,10),
+                TemperatureMin: `${newData[i].Temperature.Minimum.Value} °${newData[i].Temperature.Minimum.Unit}`,
+                TemperatureMax: `${newData[i].Temperature.Maximum.Value} °${newData[i].Temperature.Maximum.Unit}`,
+                WeatherIcon: newData[i].Day.Icon,
+                WeatherText: newData[i].Day.IconPhrase
+            };
+
+            forecastsDays.push(forecastDaily);
+
+        };
+
+        console.log(forecastsDays);
+
+        return forecastsDays;
+    });
+
 
 };

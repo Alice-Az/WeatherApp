@@ -5,16 +5,16 @@ import DailyTab from './DailyTab/DailyTab';
 import HourlyTab from './HourlyTab/HourlyTab';
 import './WeatherDetails.css';
 
-const WeatherDetails = () => {
+const WeatherDetails = (props) => {
 
     const [view, setView] = useState('details');
 
     return (
         <div className='weather-details'>
             <TabBar view={view} onClick={setView}/>
-            {view==='details' && <DetailsTab/>}
-            {view==='daily' && <DailyTab/>}
-            {view==='hourly' && <HourlyTab/>} 
+            {view==='details' && <DetailsTab weather={props.weather}/>}
+            {view==='daily' && <DailyTab locationKey={props.locationKey}/>}
+            {view==='hourly' && <HourlyTab locationKey={props.locationKey}/>} 
         </div>
     );
 };

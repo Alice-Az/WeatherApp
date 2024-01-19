@@ -3,12 +3,14 @@
 }
 
 .hourly-header {
-    width: 30%;
+    width: 20%;
     padding: 1% 2%;
     text-align: left;
+    color:#2e476e;
 }
 
 .hourly-data {
     text-align: left;
     padding: 1% 2%;
+    color:#58667b;
 }

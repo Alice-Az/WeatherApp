@@ -3,16 +3,14 @@
 }
 
 .details-header {
-    width: 30%;
+    width: 20%;
     padding: 1% 2%;
     text-align: left;
+    color:#2e476e;
 }
 
 .details-data {
     padding: 1% 2%;
     text-align: left;
-}
-
-.details-tab {
-    background-color: aquamarine;
+    color:#58667b;
 }
