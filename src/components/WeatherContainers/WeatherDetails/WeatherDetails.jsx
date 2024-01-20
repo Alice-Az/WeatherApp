@@ -13,8 +13,8 @@ const WeatherDetails = (props) => {
         <div className='weather-details'>
             <TabBar view={view} onClick={setView}/>
             {view==='details' && <DetailsTab weather={props.weather}/>}
-            {view==='daily' && <DailyTab locationKey={props.locationKey}/>}
-            {view==='hourly' && <HourlyTab locationKey={props.locationKey}/>} 
+            {view==='daily' && <DailyTab forecastDay={props.forecastDay} isLoading={props.isLoading}/>}
+            {view==='hourly' && <HourlyTab forecastHr={props.forecastHr} isLoading={props.isLoading}/>} 
         </div>
     );
 };

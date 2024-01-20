@@ -1,6 +1,19 @@
 import locationList from './testLocation.json';
 import weatherCurrent from './testWeather.json';
 
+const setLocationData = (data) => {
+    return location = 
+            {
+                Key: data.Key,
+                Rank: data.Rank,
+                LocalizedName: data.LocalizedName,
+                EnglishName: data.EnglishName,
+                Region: data.Region.EnglishName,
+                AdministrativeArea: data.AdministrativeArea.ID,
+                Country: data.Country.EnglishName
+            };
+};
+
 export const GetLocations = async (input) => {
 
     // let url = "http://dataservice.accuweather.com/locations/v1/cities/search?apikey=Ix64mBi5uAs2vwkVj5cXyWSFL0eKO3cz&q=" + input;
@@ -14,28 +27,29 @@ export const GetLocations = async (input) => {
 
         for (let i= 0; i < data.length; i++) {
 
-            let location = 
-            {
-                Key: data[i].Key,
-                Rank: data[i].Rank,
-                LocalizedName: data[i].LocalizedName,
-                EnglishName: data[i].EnglishName,
-                Region: data[i].Region.EnglishName,
-                AdministrativeArea: data[i].AdministrativeArea.ID,
-                Country: data[i].Country.EnglishName
-            };
-            
+            let location = setLocationData(data[i]);
             locations.push(location);
 
             if (locations.length === 5) break;
         }
 
-        console.log(locations);
-
         return locations;
         }
     );
 
+};
+
+export const GetGeolocationResult = async (lat, long) => {
+
+    // let url = `http://dataservice.accuweather.com/locations/v1/cities/geoposition/search?apikey=Ix64mBi5uAs2vwkVj5cXyWSFL0eKO3cz&q=${lat}%2C${long}`;
+    let url = "http://localhost:5018/api/Location/geolocationResult";
+
+    return await fetch(url)
+    .then(response => response.json())
+    .then(data => {
+        return setLocationData(data);
+        }
+    );
 };
 
 export const GetWeather = async (locationKey) => {
@@ -53,7 +67,7 @@ export const GetWeather = async (locationKey) => {
             Temperature: `${data[0].Temperature.Metric.Value} °${data[0].Temperature.Metric.Unit}`,
             RealFeelTemperature: `${data[0].RealFeelTemperature.Metric.Value} °${data[0].RealFeelTemperature.Metric.Unit}`,
             RelativeHumidity: `${data[0].RelativeHumidity} %`,
-            DewPoint: data[0].DewPoint.Metric.Value,
+            DewPoint: `${data[0].DewPoint.Metric.Value} °${data[0].DewPoint.Metric.Unit}`,
             Wind: `${data[0].Wind.Direction.Degrees} ${data[0].Wind.Direction.Localized}, ${data[0].Wind.Speed.Metric.Value} ${data[0].Wind.Speed.Metric.Unit}`,
             UVIndex: `${data[0].UVIndex} (${data[0].UVIndexText})`,
             Precipitation: `${data[0].PrecipitationSummary.Precipitation.Metric.Value} ${data[0].PrecipitationSummary.Precipitation.Metric.Unit}`,

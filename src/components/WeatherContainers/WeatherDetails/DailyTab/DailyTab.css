@@ -1,19 +1,96 @@
 .daily-table {
     width: 100%;
+    padding: 2%;
+    font-size: 1rem;
+    display: flex;
+    flex-direction: column;
 }
 
-.daily-header {
-    width: 30%;
+.daily-row {
+    width:100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+}
+
+.daily-date {
+    width: 20%;
     padding: 1% 2%;
     text-align: left;
+    color:#2e476e;
 }
 
-.daily-data {
+.daily-data-min {
+    width: 25%;
     text-align: left;
+    padding: 1% 2%;
+    color:#58667b;
+}
+
+.daily-data-max {
+    width: 25%;
+    text-align: left;
+    padding: 1% 2%;
+    color:#58667b;
+}
+
+.daily-data-small {
+    display: none;
+}
+
+.daily-icon {
+    width: 5%;
+    text-align: center;
+}
+
+.daily-icon-text {
+    text-align: left;
+    color:#58667b;
+    width:30%;
     padding: 1% 2%;
 }
 
-tr {
-    margin: 0 5px;
-    border-bottom: 2px solid black;
+@media screen and (max-width: 800px) {
+    .daily-date {
+        width: 30%;
+    }
+    
+    .daily-data-text {
+        display:none;
+    }
+
+    .daily-data-small {
+        display:inline;
+    }
+
+    .daily-data-min {
+        text-align: right;
+        padding-right: 0;
+    }
+
+    .daily-data-max {
+        padding-left: 0;
+        width: 20%;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .daily-row {
+        font-size: 0.8rem;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .daily-icon-text {
+        display: none;
+    }
+
+    .daily-data-max {
+        width: 30%;
+    }
+
+    .daily-data-min {
+        width: 30%;
+    }
 }

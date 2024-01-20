@@ -1,17 +1,19 @@
 import './HourlyTab.css';
+import WeatherIcon from '../../../icons/weatherIcon/weatherIcon';
 
-const HourlyTab = () => {
+const HourlyTab = (props) => {
+
     return (
         <table className='hourly-table'>
             <tbody>
-                <tr>
-                    <td className='hourly-header'>10:00</td>
-                    <td className='hourly-data'>12 °C</td>
-                </tr>
-                <tr>
-                    <td className='hourly-header'>11:00</td>
-                    <td className='hourly-data'>14 °C</td>
-                </tr>
+                {props.isLoading? <></> : props.forecastHr.map(hour =>
+                    <tr key={hour.DateTime}>
+                        <td className='hourly-date'>{hour.DateTime}</td>
+                        <td className='hourly-data'>{hour.Temperature}</td>
+                        <td className='hourly-icon'><WeatherIcon weatherNr={hour.WeatherIcon}/></td>
+                        <td className='hourly-icon-text'>{hour.WeatherText}</td>
+                    </tr>
+                )}
             </tbody>
         </table>
     );

@@ -5,13 +5,13 @@ import './App.css'
 import TopBar from './components/TopBar/TopBar';
 import WeatherOverview from './components/WeatherContainers/WeatherOverview/WeatherOverview';
 import WeatherDetails from './components/WeatherContainers/WeatherDetails/WeatherDetails';
-import { GetWeather, GetLocations, GetForecastHourly, GetForecastDaily } from './services/WeatherAPI';
+import { GetWeather, GetLocations, GetForecastHourly, GetForecastDaily, GetGeolocationResult } from './services/WeatherAPI';
 
 
 const App = () => 
 {
 
-  const [location, setLocation] = useState({LocalizedName: 'Stockholm'});
+  const [location, setLocation] = useState();
 
   const [weather, setWeather] = useState();
 
@@ -22,7 +22,11 @@ const App = () =>
   const [isLoading, setLoading] = useState(true);
 
   useEffect(() => {
-    GetAllWeather('314929');
+    navigator.geolocation.getCurrentPosition(async (position) => {
+      let startLocation = await GetGeolocationResult(position.coords.latitude, position.coords.longitude);
+      setLocation(startLocation);
+      await GetAllWeather(startLocation.Key);
+    });
   },[]);
   
   const UpdateWeather = (location) => {
@@ -50,7 +54,7 @@ const App = () =>
     <>
       <TopBar onClick={UpdateWeather}/>
       <WeatherOverview location={location} weather={weather} forecastDay={forecastDay} isLoading={isLoading}/>
-      <WeatherDetails locationKey={location.Key} weather={weather} forecastDay={forecastDay} forecastHr={forecastHr} isLoading={isLoading}/>
+      <WeatherDetails weather={weather} forecastDay={forecastDay} forecastHr={forecastHr} isLoading={isLoading}/>
     </>
   )
 }

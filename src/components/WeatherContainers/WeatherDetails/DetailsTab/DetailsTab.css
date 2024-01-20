@@ -1,5 +1,7 @@
 .details-table {
     width: 100%;
+    padding: 2%;
+    font-size: 1rem;
 }
 
 .details-header {
@@ -13,4 +15,20 @@
     padding: 1% 2%;
     text-align: left;
     color:#58667b;
+}
+
+@media screen and (max-width: 900px) {
+    .details-header {
+        width: 30%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .details-table {
+        font-size: 0.8rem;
+    }
+
+    .details-header {
+        width: 40%;
+    }
 }

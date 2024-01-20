@@ -4,7 +4,6 @@ import { faMagnifyingGlassLocation } from '@fortawesome/free-solid-svg-icons';
 import { useRef } from 'react';
 import { useState } from 'react';
 import { GetLocations } from '../../../services/WeatherAPI';
-import LocationResults from './LocationResults/LocationResults';
 
 const LocationSearch = (props) => {
 
@@ -13,8 +12,6 @@ const LocationSearch = (props) => {
     const [listVisible, setList] = useState(false);
 
     const [locations, setLocations] = useState([]);
-
-    // const [inputVisible, setInput] = useState(true);
 
     const setResults = async (input) => {
         setLocations(await GetLocations(input));
@@ -25,8 +22,6 @@ const LocationSearch = (props) => {
         props.onClick(choice);
         setList(false);
     };
-
-    
 
     return (
         <div className='location-search'>
