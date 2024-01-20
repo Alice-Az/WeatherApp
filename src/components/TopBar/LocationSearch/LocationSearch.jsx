@@ -4,23 +4,24 @@ import { faMagnifyingGlassLocation } from '@fortawesome/free-solid-svg-icons';
 import { useRef } from 'react';
 import { useState } from 'react';
 import { GetLocations } from '../../../services/WeatherAPI';
+import Overlay from '../../Overlay/Overlay';
 
 const LocationSearch = (props) => {
 
     const location = useRef();
 
-    const [listVisible, setList] = useState(false);
+    const [listVisible, setListVisible] = useState(false);
 
     const [locations, setLocations] = useState([]);
 
     const setResults = async (input) => {
         setLocations(await GetLocations(input));
-        setList(true);
+        setListVisible(true);
     };
 
     const setChoice = (choice) => {
         props.onClick(choice);
-        setList(false);
+        setListVisible(false);
     };
 
     return (
@@ -37,6 +38,7 @@ const LocationSearch = (props) => {
                             </div>
                 :<></>
             }
+            <Overlay isVisible={listVisible} onClick={() => setListVisible(false)}/>
         </div>
     );
 };

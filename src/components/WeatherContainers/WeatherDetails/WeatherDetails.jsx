@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import TabBar from './TabBar/TabBar';
 import DetailsTab from './DetailsTab/DetailsTab';
 import DailyTab from './DailyTab/DailyTab';
@@ -9,6 +9,10 @@ const WeatherDetails = (props) => {
 
     const [view, setView] = useState('details');
 
+    useEffect(() => {
+        if (view !== 'details' && props.isLoading) setView('details');
+    });
+    
     return (
         <div className='weather-details'>
             <TabBar view={view} onClick={setView}/>
