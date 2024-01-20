@@ -1,22 +1,60 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import TopBar from './components/TopBar/TopBar';
 import WeatherOverview from './components/WeatherContainers/WeatherOverview/WeatherOverview';
 import WeatherDetails from './components/WeatherContainers/WeatherDetails/WeatherDetails';
+import { GetWeather, GetLocations, GetForecastHourly, GetForecastDaily, GetGeolocationResult } from './services/WeatherAPI';
 
-function App() {
 
-  const temperature = '15 °C';
+const App = () => 
+{
 
-  const [location, setLocation] = useState('Stockholm');
+  const [location, setLocation] = useState();
+
+  const [weather, setWeather] = useState();
+
+  const [forecastHr, setForecastHr] = useState();
+
+  const [forecastDay, setForecastDay] = useState();
+
+  const [isLoading, setLoading] = useState(true);
+
+  useEffect(() => {
+    navigator.geolocation.getCurrentPosition(async (position) => {
+      let startLocation = await GetGeolocationResult(position.coords.latitude, position.coords.longitude);
+      setLocation(startLocation);
+      await GetAllWeather(startLocation.Key);
+    });
+  },[]);
+  
+  const UpdateWeather = (location) => {
+    setLocation(location);
+    GetAllWeather(location.Key);
+  };
+
+  const GetAllWeather = async (locationKey) => {
+    setLoading(true);
+    const weatherPromise = GetWeather(locationKey);
+    const forecastHrPromise = GetForecastHourly(locationKey);
+    const forecastDayPromise = GetForecastDaily(locationKey);
+
+    const weatherData = await weatherPromise;
+    const forecastHrData = await forecastHrPromise;
+    const forecastDayData = await forecastDayPromise;
+
+    setWeather(weatherData);
+    setForecastHr(forecastHrData);
+    setForecastDay(forecastDayData);
+    setLoading(false);
+  };
 
   return (
     <>
-      <TopBar onClick={setLocation}/>
-      <WeatherOverview location={location} temperature={temperature}/>
-      <WeatherDetails/>
+      <TopBar onClick={UpdateWeather}/>
+      <WeatherOverview location={location} weather={weather} forecastDay={forecastDay} isLoading={isLoading}/>
+      <WeatherDetails weather={weather} forecastDay={forecastDay} forecastHr={forecastHr} isLoading={isLoading}/>
     </>
   )
 }

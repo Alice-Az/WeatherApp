@@ -1,18 +1,34 @@
 .details-table {
     width: 100%;
+    padding: 2%;
+    font-size: 1rem;
 }
 
 .details-header {
-    width: 30%;
+    width: 20%;
     padding: 1% 2%;
     text-align: left;
+    color:#2e476e;
 }
 
 .details-data {
     padding: 1% 2%;
     text-align: left;
+    color:#58667b;
 }
 
-.details-tab {
-    background-color: aquamarine;
+@media screen and (max-width: 900px) {
+    .details-header {
+        width: 30%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .details-table {
+        font-size: 0.8rem;
+    }
+
+    .details-header {
+        width: 40%;
+    }
 }

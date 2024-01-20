@@ -1,14 +1,59 @@
 .hourly-table {
     width: 100%;
+    padding: 2%;
+    font-size: 1rem;
 }
 
-.hourly-header {
+.hourly-date {
     width: 30%;
     padding: 1% 2%;
     text-align: left;
+    color:#2e476e;
 }
 
 .hourly-data {
     text-align: left;
     padding: 1% 2%;
+    color:#58667b;
+    width:20%;
+}
+
+.hourly-icon {
+    text-align: left;
+}
+
+.hourly-icon-text {
+    text-align: left;
+    color:#58667b;
+    width:40%;
+}
+
+@media screen and (max-width: 800px) {
+    .hourly-table {
+        font-size: 0.8rem;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .hourly-date {
+        width: 35%;
+    }
+
+    .hourly-data {
+        width: 15%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .hourly-icon-text {
+        display: none;
+    }
+
+    .hourly-date {
+        width: 50%;
+    }
+
+    .hourly-data {
+        width:30%;
+    }
 }

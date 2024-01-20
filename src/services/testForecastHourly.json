@@ -1,0 +1,194 @@
+[
+    {
+        "DateTime": "2024-01-18T14:00:00+01:00",
+        "EpochDateTime": 1705582800,
+        "WeatherIcon": 4,
+        "IconPhrase": "Intermittent clouds",
+        "HasPrecipitation": false,
+        "IsDaylight": true,
+        "Temperature": {
+            "Value": -8.0,
+            "Unit": "C",
+            "UnitType": 17
+        },
+        "PrecipitationProbability": 7,
+        "MobileLink": "http://www.accuweather.com/en/se/stockholm/314929/hourly-weather-forecast/314929?day=1&hbhhour=14&unit=c&lang=en-us",
+        "Link": "http://www.accuweather.com/en/se/stockholm/314929/hourly-weather-forecast/314929?day=1&hbhhour=14&unit=c&lang=en-us"
+    },
+    {
+        "DateTime": "2024-01-18T15:00:00+01:00",
+        "EpochDateTime": 1705586400,
+        "WeatherIcon": 3,
+        "IconPhrase": "Partly sunny",
+        "HasPrecipitation": false,
+        "IsDaylight": true,
+        "Temperature": {
+            "Value": -8.3,
+            "Unit": "C",
+            "UnitType": 17
+        },
+        "PrecipitationProbability": 7,
+        "MobileLink": "http://www.accuweather.com/en/se/stockholm/314929/hourly-weather-forecast/314929?day=1&hbhhour=15&unit=c&lang=en-us",
+        "Link": "http://www.accuweather.com/en/se/stockholm/314929/hourly-weather-forecast/314929?day=1&hbhhour=15&unit=c&lang=en-us"
+    },
+    {
+        "DateTime": "2024-01-18T16:00:00+01:00",
+        "EpochDateTime": 1705590000,
+        "WeatherIcon": 34,
+        "IconPhrase": "Mostly clear",
+        "HasPrecipitation": false,
+        "IsDaylight": false,
+        "Temperature": {
+            "Value": -8.3,
+            "Unit": "C",
+            "UnitType": 17
+        },
+        "PrecipitationProbability": 7,
+        "MobileLink": "http://www.accuweather.com/en/se/stockholm/314929/hourly-weather-forecast/314929?day=1&hbhhour=16&unit=c&lang=en-us",
+        "Link": "http://www.accuweather.com/en/se/stockholm/314929/hourly-weather-forecast/314929?day=1&hbhhour=16&unit=c&lang=en-us"
+    },
+    {
+        "DateTime": "2024-01-18T17:00:00+01:00",
+        "EpochDateTime": 1705593600,
+        "WeatherIcon": 35,
+        "IconPhrase": "Partly cloudy",
+        "HasPrecipitation": false,
+        "IsDaylight": false,
+        "Temperature": {
+            "Value": -8.4,
+            "Unit": "C",
+            "UnitType": 17
+        },
+        "PrecipitationProbability": 7,
+        "MobileLink": "http://www.accuweather.com/en/se/stockholm/314929/hourly-weather-forecast/314929?day=1&hbhhour=17&unit=c&lang=en-us",
+        "Link": "http://www.accuweather.com/en/se/stockholm/314929/hourly-weather-forecast/314929?day=1&hbhhour=17&unit=c&lang=en-us"
+    },
+    {
+        "DateTime": "2024-01-18T18:00:00+01:00",
+        "EpochDateTime": 1705597200,
+        "WeatherIcon": 36,
+        "IconPhrase": "Intermittent clouds",
+        "HasPrecipitation": false,
+        "IsDaylight": false,
+        "Temperature": {
+            "Value": -8.8,
+            "Unit": "C",
+            "UnitType": 17
+        },
+        "PrecipitationProbability": 6,
+        "MobileLink": "http://www.accuweather.com/en/se/stockholm/314929/hourly-weather-forecast/314929?day=1&hbhhour=18&unit=c&lang=en-us",
+        "Link": "http://www.accuweather.com/en/se/stockholm/314929/hourly-weather-forecast/314929?day=1&hbhhour=18&unit=c&lang=en-us"
+    },
+    {
+        "DateTime": "2024-01-18T19:00:00+01:00",
+        "EpochDateTime": 1705600800,
+        "WeatherIcon": 7,
+        "IconPhrase": "Cloudy",
+        "HasPrecipitation": false,
+        "IsDaylight": false,
+        "Temperature": {
+            "Value": -8.8,
+            "Unit": "C",
+            "UnitType": 17
+        },
+        "PrecipitationProbability": 3,
+        "MobileLink": "http://www.accuweather.com/en/se/stockholm/314929/hourly-weather-forecast/314929?day=1&hbhhour=19&unit=c&lang=en-us",
+        "Link": "http://www.accuweather.com/en/se/stockholm/314929/hourly-weather-forecast/314929?day=1&hbhhour=19&unit=c&lang=en-us"
+    },
+    {
+        "DateTime": "2024-01-18T20:00:00+01:00",
+        "EpochDateTime": 1705604400,
+        "WeatherIcon": 7,
+        "IconPhrase": "Cloudy",
+        "HasPrecipitation": false,
+        "IsDaylight": false,
+        "Temperature": {
+            "Value": -9.0,
+            "Unit": "C",
+            "UnitType": 17
+        },
+        "PrecipitationProbability": 3,
+        "MobileLink": "http://www.accuweather.com/en/se/stockholm/314929/hourly-weather-forecast/314929?day=1&hbhhour=20&unit=c&lang=en-us",
+        "Link": "http://www.accuweather.com/en/se/stockholm/314929/hourly-weather-forecast/314929?day=1&hbhhour=20&unit=c&lang=en-us"
+    },
+    {
+        "DateTime": "2024-01-18T21:00:00+01:00",
+        "EpochDateTime": 1705608000,
+        "WeatherIcon": 7,
+        "IconPhrase": "Cloudy",
+        "HasPrecipitation": false,
+        "IsDaylight": false,
+        "Temperature": {
+            "Value": -9.1,
+            "Unit": "C",
+            "UnitType": 17
+        },
+        "PrecipitationProbability": 3,
+        "MobileLink": "http://www.accuweather.com/en/se/stockholm/314929/hourly-weather-forecast/314929?day=1&hbhhour=21&unit=c&lang=en-us",
+        "Link": "http://www.accuweather.com/en/se/stockholm/314929/hourly-weather-forecast/314929?day=1&hbhhour=21&unit=c&lang=en-us"
+    },
+    {
+        "DateTime": "2024-01-18T22:00:00+01:00",
+        "EpochDateTime": 1705611600,
+        "WeatherIcon": 7,
+        "IconPhrase": "Cloudy",
+        "HasPrecipitation": false,
+        "IsDaylight": false,
+        "Temperature": {
+            "Value": -9.2,
+            "Unit": "C",
+            "UnitType": 17
+        },
+        "PrecipitationProbability": 3,
+        "MobileLink": "http://www.accuweather.com/en/se/stockholm/314929/hourly-weather-forecast/314929?day=1&hbhhour=22&unit=c&lang=en-us",
+        "Link": "http://www.accuweather.com/en/se/stockholm/314929/hourly-weather-forecast/314929?day=1&hbhhour=22&unit=c&lang=en-us"
+    },
+    {
+        "DateTime": "2024-01-18T23:00:00+01:00",
+        "EpochDateTime": 1705615200,
+        "WeatherIcon": 7,
+        "IconPhrase": "Cloudy",
+        "HasPrecipitation": false,
+        "IsDaylight": false,
+        "Temperature": {
+            "Value": -9.6,
+            "Unit": "C",
+            "UnitType": 17
+        },
+        "PrecipitationProbability": 3,
+        "MobileLink": "http://www.accuweather.com/en/se/stockholm/314929/hourly-weather-forecast/314929?day=1&hbhhour=23&unit=c&lang=en-us",
+        "Link": "http://www.accuweather.com/en/se/stockholm/314929/hourly-weather-forecast/314929?day=1&hbhhour=23&unit=c&lang=en-us"
+    },
+    {
+        "DateTime": "2024-01-19T00:00:00+01:00",
+        "EpochDateTime": 1705618800,
+        "WeatherIcon": 7,
+        "IconPhrase": "Cloudy",
+        "HasPrecipitation": false,
+        "IsDaylight": false,
+        "Temperature": {
+            "Value": -10.0,
+            "Unit": "C",
+            "UnitType": 17
+        },
+        "PrecipitationProbability": 2,
+        "MobileLink": "http://www.accuweather.com/en/se/stockholm/314929/hourly-weather-forecast/314929?day=2&hbhhour=0&unit=c&lang=en-us",
+        "Link": "http://www.accuweather.com/en/se/stockholm/314929/hourly-weather-forecast/314929?day=2&hbhhour=0&unit=c&lang=en-us"
+    },
+    {
+        "DateTime": "2024-01-19T01:00:00+01:00",
+        "EpochDateTime": 1705622400,
+        "WeatherIcon": 7,
+        "IconPhrase": "Cloudy",
+        "HasPrecipitation": false,
+        "IsDaylight": false,
+        "Temperature": {
+            "Value": -10.0,
+            "Unit": "C",
+            "UnitType": 17
+        },
+        "PrecipitationProbability": 0,
+        "MobileLink": "http://www.accuweather.com/en/se/stockholm/314929/hourly-weather-forecast/314929?day=2&hbhhour=1&unit=c&lang=en-us",
+        "Link": "http://www.accuweather.com/en/se/stockholm/314929/hourly-weather-forecast/314929?day=2&hbhhour=1&unit=c&lang=en-us"
+    }
+]
