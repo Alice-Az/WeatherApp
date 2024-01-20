@@ -1,17 +1,14 @@
-import locationList from './testLocation.json';
-import weatherCurrent from './testWeather.json';
 
-const setLocationData = (data) => {
-    return location = 
-            {
-                Key: data.Key,
-                Rank: data.Rank,
-                LocalizedName: data.LocalizedName,
-                EnglishName: data.EnglishName,
-                Region: data.Region.EnglishName,
-                AdministrativeArea: data.AdministrativeArea.ID,
-                Country: data.Country.EnglishName
-            };
+const SetLocationData = (data) => {
+    return {
+        Key: data.Key,
+        Rank: data.Rank,
+        LocalizedName: data.LocalizedName,
+        EnglishName: data.EnglishName,
+        Region: data.Region.EnglishName,
+        AdministrativeArea: data.AdministrativeArea.ID,
+        Country: data.Country.EnglishName
+    };
 };
 
 export const GetLocations = async (input) => {
@@ -27,16 +24,16 @@ export const GetLocations = async (input) => {
 
         for (let i= 0; i < data.length; i++) {
 
-            let location = setLocationData(data[i]);
+            let location = SetLocationData(data[i]);
             locations.push(location);
 
             if (locations.length === 5) break;
         }
 
-        return locations;
-        }
-    );
+        console.log(locations);
 
+        return locations;
+    });
 };
 
 export const GetGeolocationResult = async (lat, long) => {
@@ -47,9 +44,10 @@ export const GetGeolocationResult = async (lat, long) => {
     return await fetch(url)
     .then(response => response.json())
     .then(data => {
-        return setLocationData(data);
-        }
-    );
+        let location = SetLocationData(data);
+
+        return location;
+    });
 };
 
 export const GetWeather = async (locationKey) => {
@@ -76,7 +74,7 @@ export const GetWeather = async (locationKey) => {
         };
 
         return currentWeather;
-        });
+    });
 };
 
 export const GetForecastHourly = async (locationKey) => {
