@@ -13,8 +13,8 @@ const SetLocationData = (data) => {
 
 export const GetLocations = async (input) => {
 
-    // let url = "http://dataservice.accuweather.com/locations/v1/cities/search?apikey=Ix64mBi5uAs2vwkVj5cXyWSFL0eKO3cz&q=" + input;
-    let url = "http://localhost:5018/api/Location/location";
+    let url = "http://dataservice.accuweather.com/locations/v1/cities/search?apikey=Ix64mBi5uAs2vwkVj5cXyWSFL0eKO3cz&q=" + input;
+    // let url = "http://localhost:5018/api/Location/location";
 
     return await fetch(url)
     .then(response => response.json())
@@ -22,15 +22,15 @@ export const GetLocations = async (input) => {
 
         let locations = [];
 
-        for (let i= 0; i < data.length; i++) {
+        if (data !== null) {
+            for (let i= 0; i < data.length; i++) {
 
-            let location = SetLocationData(data[i]);
-            locations.push(location);
-
-            if (locations.length === 5) break;
-        }
-
-        console.log(locations);
+                let location = SetLocationData(data[i]);
+                locations.push(location);
+    
+                if (locations.length === 5) break;
+            };
+        };
 
         return locations;
     });
@@ -38,8 +38,8 @@ export const GetLocations = async (input) => {
 
 export const GetGeolocationResult = async (lat, long) => {
 
-    // let url = `http://dataservice.accuweather.com/locations/v1/cities/geoposition/search?apikey=Ix64mBi5uAs2vwkVj5cXyWSFL0eKO3cz&q=${lat}%2C${long}`;
-    let url = "http://localhost:5018/api/Location/geolocationResult";
+    let url = `http://dataservice.accuweather.com/locations/v1/cities/geoposition/search?apikey=Ix64mBi5uAs2vwkVj5cXyWSFL0eKO3cz&q=${lat}%2C${long}`;
+    // let url = "http://localhost:5018/api/Location/geolocationResult";
 
     return await fetch(url)
     .then(response => response.json())
@@ -52,8 +52,8 @@ export const GetGeolocationResult = async (lat, long) => {
 
 export const GetWeather = async (locationKey) => {
 
-    // let url = `http://dataservice.accuweather.com/currentconditions/v1/${locationKey}?apikey=Ix64mBi5uAs2vwkVj5cXyWSFL0eKO3cz&details=true`;
-    let url = 'http://localhost:5018/api/Weather/weather';
+    let url = `http://dataservice.accuweather.com/currentconditions/v1/${locationKey}?apikey=Ix64mBi5uAs2vwkVj5cXyWSFL0eKO3cz&details=true`;
+    // let url = 'http://localhost:5018/api/Weather/weather';
 
     return await fetch(url)
     .then(response => response.json())
@@ -79,8 +79,8 @@ export const GetWeather = async (locationKey) => {
 
 export const GetForecastHourly = async (locationKey) => {
 
-    // let url = `http://dataservice.accuweather.com/forecasts/v1/hourly/12hour/${locationKey}?apikey=Ix64mBi5uAs2vwkVj5cXyWSFL0eKO3cz&metric=true`;
-    let url = "http://localhost:5018/api/Weather/forecastHourly";
+    let url = `http://dataservice.accuweather.com/forecasts/v1/hourly/12hour/${locationKey}?apikey=Ix64mBi5uAs2vwkVj5cXyWSFL0eKO3cz&metric=true`;
+    // let url = "http://localhost:5018/api/Weather/forecastHourly";
 
     return await fetch(url)
     .then(response => response.json())
@@ -109,8 +109,8 @@ export const GetForecastHourly = async (locationKey) => {
 
 export const GetForecastDaily = async (locationKey) => {
 
-    // let url = `http://dataservice.accuweather.com/forecasts/v1/daily/5day/${locationKey}?apikey=Ix64mBi5uAs2vwkVj5cXyWSFL0eKO3cz&metric=true`;
-    let url = "http://localhost:5018/api/Weather/forecastDaily";
+    let url = `http://dataservice.accuweather.com/forecasts/v1/daily/5day/${locationKey}?apikey=Ix64mBi5uAs2vwkVj5cXyWSFL0eKO3cz&metric=true`;
+    // let url = "http://localhost:5018/api/Weather/forecastDaily";
 
     return await fetch(url)
     .then(response => response.json())
@@ -132,8 +132,6 @@ export const GetForecastDaily = async (locationKey) => {
             forecastsDays.push(forecastDaily);
 
         };
-
-        console.log(forecastsDays);
 
         return forecastsDays;
     });

@@ -1,4 +1,4 @@
-.menu-button {
+.menu-bar {
     box-sizing: border-box;
     min-height: 30px;
     padding: 0;
@@ -7,7 +7,14 @@
     background-color: white;
     border: 2px solid lightgray;
     height: 60%;
-    padding: 0.4rem;
+    position: relative;
+}
+
+.menu-button {
+    height:100%;
+    border:none;
+    border-radius: 10px;
+    padding: 8px;
 }
 
 .menu-icon {
@@ -22,3 +29,55 @@
     filter: drop-shadow(0 0 0.7rem darkgrey);
 }
 
+.favLocation-results {
+    border: 1px solid #b0c4e4 ;
+    position: absolute;
+    min-width: 250px;
+    top: calc(100% + 1px);
+    right: 0;
+    background-color: #d5e5ff;
+    border-radius: 10px;
+    z-index: 100;
+    padding: 0;
+    user-select: none;
+}
+
+.favLocation-item {
+    margin: 0px 10px;
+    padding: 5px 0;
+    text-align: left;
+    border-bottom: 2px solid #bbd1f3;
+    color: #2e476e;
+}
+
+.favLocation-item:last-child {
+    border: none;
+}
+
+.favLocation-item:hover:not(.no-result) {
+    cursor: pointer;
+    color: #051227;
+    background-color: #ecf4ff;
+    margin:0;
+    padding: 5px 10px;
+}
+
+.favLocation-item:last-child:hover:not(.no-result) {
+    border-bottom-left-radius: inherit;
+    border-bottom-right-radius: inherit;
+}
+
+.favLocation-item:first-child:hover:not(.no-result) {
+    border-top-left-radius: inherit;
+    border-top-right-radius: inherit;
+}
+
+.favLocation-details {
+    color:#8b99ad;
+}
+
+@media screen and (max-width: 600px) {
+    .favLocation-results {
+        font-size: 0.8rem;
+    }
+}

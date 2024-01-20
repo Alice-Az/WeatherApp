@@ -8,7 +8,7 @@ const TopBar = (props) => {
     <div className='top-bar'>
             <AppIcon/>
             <LocationSearch onClick={props.onClick}/>
-            <Menu/>
+            <Menu onClick={props.onClick}/>
     </div>
     );
 };

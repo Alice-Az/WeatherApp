@@ -64,6 +64,7 @@
     border-radius: 10px;
     z-index: 100;
     padding: 0;
+    user-select: none;
 }
 
 .location-item:last-child {
@@ -92,5 +93,16 @@
     .location-input {
         padding-left: 10px; 
         font-size: 0.8rem;
+    }
+
+    .location-item {
+        font-size: 0.8rem;
+    }
+}
+
+@media screen and (max-width: 410px) {
+    .location-item {
+        font-size: 0.7rem;
+        margin: 0px 5px;
     }
 }
