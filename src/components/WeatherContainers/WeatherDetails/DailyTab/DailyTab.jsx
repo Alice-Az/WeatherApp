@@ -1,5 +1,5 @@
 import "./DailyTab.css";
-// import WeatherIcon from '../../../icons/weatherIcon/weatherIcon';
+// import WeatherIcon from '../../../icons/WeatherIcon/WeatherIcon';
 
 const DailyTab = (props) => {
     return (

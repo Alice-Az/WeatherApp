@@ -1,5 +1,5 @@
 import "./WeatherOverview.css";
-// import WeatherIcon from '../../icons/weatherIcon/weatherIcon';
+import WeatherIcon from "../../icons/WeatherIcon/WeatherIcon";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar as starFull } from "@fortawesome/free-solid-svg-icons";
 import { faStar as starEmpty } from "@fortawesome/free-regular-svg-icons";
@@ -94,7 +94,10 @@ const WeatherOverview = (props) => {
                     </div>
                 </div>
                 <div className="weather-display">
-                    {/* <WeatherIcon className='weather-image' weatherNr={props.weather?.WeatherIcon}/> */}
+                    <WeatherIcon
+                        className="weather-image"
+                        weatherNr={props.weather?.WeatherIcon}
+                    />
                     <p className="weather-text">{props.weather?.WeatherText}</p>
                 </div>
             </div>
