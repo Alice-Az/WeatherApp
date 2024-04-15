@@ -1,5 +1,5 @@
 import "./HourlyTab.css";
-// import WeatherIcon from '../../../icons/weatherIcon/weatherIcon';
+import WeatherIcon from "../../../icons/WeatherIcon/WeatherIcon";
 
 const HourlyTab = (props) => {
     return (
@@ -12,7 +12,9 @@ const HourlyTab = (props) => {
                         <tr key={hour.DateTime}>
                             <td className="hourly-date">{hour.DateTime}</td>
                             <td className="hourly-data">{hour.Temperature}</td>
-                            {/* <td className='hourly-icon'><WeatherIcon weatherNr={hour.WeatherIcon}/></td> */}
+                            <td className="hourly-icon">
+                                <WeatherIcon weatherNr={hour.WeatherIcon} />
+                            </td>
                             <td className="hourly-icon-text">
                                 {hour.WeatherText}
                             </td>

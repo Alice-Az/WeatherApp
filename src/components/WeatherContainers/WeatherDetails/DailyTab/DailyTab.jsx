@@ -1,5 +1,5 @@
 import "./DailyTab.css";
-// import WeatherIcon from '../../../icons/WeatherIcon/WeatherIcon';
+import WeatherIcon from "../../../icons/WeatherIcon/WeatherIcon";
 
 const DailyTab = (props) => {
     return (
@@ -21,7 +21,9 @@ const DailyTab = (props) => {
                             <span className="daily-data-text">Max: </span>
                             {day.TemperatureMax}
                         </div>
-                        {/* <div className='daily-icon'><WeatherIcon weatherNr={day.WeatherIcon}/></div> */}
+                        <div className="daily-icon">
+                            <WeatherIcon weatherNr={day.WeatherIcon} />
+                        </div>
                         <div className="daily-icon-text">{day.WeatherText}</div>
                     </div>
                 ))
