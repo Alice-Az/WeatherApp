@@ -44,6 +44,9 @@ export const GetGeolocationResult = async (lat, long) => {
             let location = SetLocationData(data);
 
             return location;
+        })
+        .catch(() => {
+            return null;
         });
 };
 
@@ -124,4 +127,8 @@ export const GetForecastDaily = async (locationKey) => {
 
             return forecastsDays;
         });
+};
+
+export const DailyCallsReached = async () => {
+    return null;
 };
